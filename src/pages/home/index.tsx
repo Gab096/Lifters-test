@@ -1,15 +1,18 @@
-import { useEffect, useState, useContext } from "react";
-import { AuthContext } from "../../services/auth";
+import { useEffect } from "react";
+import { useAuth } from "../../services/auth";
+import { Header } from "../../components";
 
 const Home = () => {
-  const { user, requestApi }: any = useContext(AuthContext);
+  const { data, requestApi }: any = useAuth();
   useEffect(() => {
     requestApi();
   }, []);
 
-  console.log(user.data);
-
-  return <div>oi</div>;
+  return (
+    <div className="Container">
+      <Header />
+    </div>
+  );
 };
 
 export default Home;

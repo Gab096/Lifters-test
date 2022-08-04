@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import api from "./api";
 export const AuthContext = React.createContext({});
 
@@ -7,12 +7,10 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [products, setProducts] = useState([]);
-
-  const user = {
-    data: products,
+  const [products, setProducts] = useState<any>([]);
+  const data = {
+    products: products,
   };
-
   const requestApi = () => {
     return api
       .get("")
@@ -25,8 +23,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, requestApi }}>
+    <AuthContext.Provider value={{ data, requestApi }}>
       {children}
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);
