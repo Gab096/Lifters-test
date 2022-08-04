@@ -1,4 +1,4 @@
-import { Navbar, Banner } from "../../";
+import { Navbar, Banner } from "..";
 
 const Header = () => {
   return (
