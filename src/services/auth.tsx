@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     setFilterProductColor(newArray);
   }, [isColor]);
-  console.log(filterProductColor);
   const requestApi = () => {
     return api
       .get("")
@@ -49,7 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   const data = {
-    products: [],
+    products: filteredProducts,
     setIsChecked: setIsChecked,
     setIsColor: setIsColor,
     setItem: setItem,

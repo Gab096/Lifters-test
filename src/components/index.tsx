@@ -6,6 +6,7 @@ export { default as Navbar } from "./molecules/Navbar";
 export { default as Banner } from "./molecules/Banner";
 export { default as Filters } from "./molecules/Filters";
 export { default as Products } from "./molecules/Products";
+export { default as ProductDescription } from "./molecules/ProductDescription";
 export { default as Photos } from "./molecules/Photos";
 
 export { default as Checkbox } from "./atomic/Checkbox";

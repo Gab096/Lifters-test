@@ -1,42 +1,42 @@
 export const filterColor = [
   {
-    name: "laranja",
+    nome: "laranja",
     color: "#DF9167",
   },
   {
-    name: "roxo",
+    nome: "roxo",
     color: "#7B61FF",
   },
   {
-    name: "verde",
+    nome: "verde",
     color: "#219653",
   },
   {
-    name: "azul",
+    nome: "azul",
     color: "#2F80ED",
   },
   {
-    name: "vermelho",
+    nome: "vermelho",
     color: "#EB5757",
   },
   {
-    name: "azul-claro",
+    nome: "azul-claro",
     color: "#56CCF2",
   },
   {
-    name: "cinza",
+    nome: "cinza",
     color: "#4F4F4F",
   },
   {
-    name: "lilas",
+    nome: "lilas",
     color: "#BB6BD9",
   },
   {
-    name: "branco",
+    nome: "branco",
     color: "#F2F2F2",
   },
   {
-    name: "verde-claro",
+    nome: "verde-claro",
     color: "#6FCF97",
   },
 ];

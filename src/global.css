@@ -2,8 +2,11 @@
 *{
   margin: 0;
   padding: 0;
-  outline: none;
+  outline: none ;
   box-sizing: border-box;
+}
+.text-black-50{
+  color: rgba(0, 0,0 , 0.5);
 }
 .ht-hundred{
   height: 100% !important;
@@ -44,6 +47,9 @@
 .bg-verde-claro{
   background: #6FCF97;
 }
+.bg-preto{
+  background: #000;
+}
 
 
 
@@ -76,4 +82,7 @@
 }
 .bg-verde-claro:hover{
   background: #6FCF97;
+}
+.bg-preto:hover{
+  background: #000;
 }
