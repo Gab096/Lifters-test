@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import api from "./api";
 export const AuthContext = React.createContext({});
 
@@ -15,23 +15,24 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   console.log(isColor);
 
-  const filteredProducts =  products.filter((item: any) => {
+  const filteredProducts = products.filter((item: any) => {
     return item.categoria.includes(isChecked);
   });
 
-  const filteredProductColor = products.length > 1 && products.filter((product) => {
-    const newArray = []
-    product.cores.map((cor:any) => {
-      if (cor.nome === isColor) {
-        newArray.push(product)
-      }
-      console.log(newArray)    
-    });
-  });
-  
-  
-  
+  useEffect(() => {
+    const newArray: any = [];
 
+    products.map((product: any) => {
+      product.cores.map((cor: any) => {
+        if (cor.nome === isColor) {
+          newArray.push(product);
+        }
+      });
+    });
+
+    setFilterProductColor(newArray);
+  }, [isColor]);
+  console.log(filterProductColor);
   const requestApi = () => {
     return api
       .get("")
@@ -46,8 +47,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   React.useEffect(() => {
     requestApi();
   }, []);
-
-  
 
   const data = {
     products: [],
