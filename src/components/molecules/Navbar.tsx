@@ -1,8 +1,8 @@
 import { navItems } from "../../__Mocks__/navItems";
 const Navbar = () => {
   return (
-    <div className="w-30 h-100 d-flex " >
-      <ul className="w-100 h-100 d-flex g-2 m-0 ">
+    <div className="w-30 h-100 d-flex "  style={{gap:'20px'}} >
+      <ul className="w-100 h-100 d-flex m-0 " style={{gap:'20px'}}>
         {navItems.map((item) => (
           <li
             key={item.id}
@@ -18,6 +18,7 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+      <input placeholder='Search' className='pl-20'/>
     </div>
   );
 };
