@@ -12,7 +12,7 @@ const Products = () => {
       </div>
       <div className="row row-cols-3">
         {data.products.map((item: any, index: any) => (
-          <Card key={index} data={item} index={index} />
+          <Card key={index} mapdata={item} index={index} />
         ))}
       </div>
     </div>

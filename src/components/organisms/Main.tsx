@@ -2,8 +2,8 @@ import { Filters, Products } from "../index";
 
 const Main = () => {
   return (
-    <div className="bg-primary pt-5">
-      <div className="container">
+    <main className="pt-5 ">
+      <section className="container ">
         <div className="row">
           <div className="col-3">
             <Filters />
@@ -12,8 +12,8 @@ const Main = () => {
             <Products />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

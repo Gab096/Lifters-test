@@ -2,6 +2,7 @@ import { useAuth } from "../../services/auth";
 
 const RoundedButton = ({ mapdata }: any) => {
   const { data }: any = useAuth();
+  
   return (
     <div className="col">
       <button

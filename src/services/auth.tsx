@@ -10,23 +10,28 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [products, setProducts] = useState<any>([]);
   const [isChecked, setIsChecked] = useState("");
   const [isColor, setIsColor] = useState("");
+  const [item, setItem] = useState({});
+  const [filterProductColor, setFilterProductColor] = useState([]);
 
-  const filteredProducts = products.filter((item: any) => {
+  console.log(isColor);
+
+  const filteredProducts =  products.filter((item: any) => {
     return item.categoria.includes(isChecked);
   });
-  const colorFilteredProducts = filteredProducts.filter((item: any) => {
-    return item.cores.filter((i: any) => {
-      return i.nome.includes(isColor);
+
+  const filteredProductColor = products.length > 1 && products.filter((product) => {
+    const newArray = []
+    product.cores.map((cor:any) => {
+      if (cor.nome === isColor) {
+        newArray.push(product)
+      }
+      console.log(newArray)    
     });
   });
+  
+  
+  
 
-  console.log(colorFilteredProducts);
-
-  const data = {
-    products: colorFilteredProducts,
-    setIsChecked: setIsChecked,
-    setIsColor: setIsColor,
-  };
   const requestApi = () => {
     return api
       .get("")
@@ -36,6 +41,20 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       .catch((err: any) => {
         console.error("ops! ocorreu um erro : " + err);
       });
+  };
+
+  React.useEffect(() => {
+    requestApi();
+  }, []);
+
+  
+
+  const data = {
+    products: [],
+    setIsChecked: setIsChecked,
+    setIsColor: setIsColor,
+    setItem: setItem,
+    item: item,
   };
 
   return (

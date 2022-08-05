@@ -1,11 +1,16 @@
-import { Navbar, Banner } from "..";
+import { Navbar, Logo } from "..";
+interface HeaderProps {
+  isProduct?: boolean;
+}
 
-const Header = () => {
+const Header = ({ isProduct }: HeaderProps) => {
   return (
-    <div className="bg-black">
-      <Navbar />
-      <Banner />
-    </div>
+    <header className="bg-black py-3 border-bottom   border-secondary " >
+      <nav className="navbar container d-flex align-items-center navbar-expand-lg " >
+        <Logo />
+        {isProduct && <Navbar />}
+      </nav>
+    </header>
   );
 };
 

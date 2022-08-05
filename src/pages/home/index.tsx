@@ -1,16 +1,15 @@
 import { useEffect } from "react";
 import { useAuth } from "../../services/auth";
-import { Header, Main } from "../../components";
+import { Header, Main, Banner } from "../../components";
 
 const Home = () => {
-  const { data, requestApi }: any = useAuth();
-  useEffect(() => {
-    requestApi();
-  }, []);
+  const { data }: any = useAuth();
+ 
 
   return (
-    <div className="Container">
+    <div className="bg-primary Container min-vh-100">
       <Header />
+      <Banner />
       <Main />
     </div>
   );
