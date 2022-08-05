@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAuth } from "../../services/auth";
-import { Header } from "../../components";
+import { Header, Main } from "../../components";
 
 const Home = () => {
   const { data, requestApi }: any = useAuth();
@@ -11,6 +11,7 @@ const Home = () => {
   return (
     <div className="Container">
       <Header />
+      <Main />
     </div>
   );
 };

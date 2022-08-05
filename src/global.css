@@ -1,6 +1,76 @@
+
 *{
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+}
+.bg-primary{
+  background: #EFF2F6 !important;
+}
+.bg-primary:checked{
+  background-color: red !important;
+}
+.bg-laranja{
+  background: #DF9167 ;
+}
+.bg-roxo{
+  background: #7B61FF;
+}
+.bg-verde{
+  background: #219653;
+}
+.bg-azul{
+  background: #2F80ED;
+}
+.bg-vermelho{
+  background: #EB5757;
+}
+.bg-azul-claro{
+  background: #56CCF2;
+}
+.bg-cinza{
+  background: #4F4F4F;
+}
+.bg-lilas{
+  background: #BB6BD9;
+}
+.bg-branco{
+  background: #FfFfFf;
+}
+.bg-verde-claro{
+  background: #6FCF97;
+}
+
+
+
+.bg-laranja:hover{
+  background: #DF9167 ;
+}
+.bg-roxo:hover{
+  background: #7B61FF;
+}
+.bg-verde:hover{
+  background: #219653;
+}
+.bg-azul:hover{
+  background: #2F80ED;
+}
+.bg-vermelho:hover{
+  background: #EB5757;
+}
+.bg-azul-claro:hover{
+  background: #56CCF2;
+}
+.bg-cinza:hover{
+  background: #4F4F4F;
+}
+.bg-lilas:hover{
+  background: #BB6BD9;
+}
+.bg-branco:hover{
+  background: #FfFfFf;
+}
+.bg-verde-claro:hover{
+  background: #6FCF97;
 }

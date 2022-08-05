@@ -8,8 +8,24 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [products, setProducts] = useState<any>([]);
+  const [isChecked, setIsChecked] = useState("");
+  const [isColor, setIsColor] = useState("");
+
+  const filteredProducts = products.filter((item: any) => {
+    return item.categoria.includes(isChecked);
+  });
+  const colorFilteredProducts = filteredProducts.filter((item: any) => {
+    return item.cores.filter((i: any) => {
+      return i.nome.includes(isColor);
+    });
+  });
+
+  console.log(colorFilteredProducts);
+
   const data = {
-    products: products,
+    products: colorFilteredProducts,
+    setIsChecked: setIsChecked,
+    setIsColor: setIsColor,
   };
   const requestApi = () => {
     return api
