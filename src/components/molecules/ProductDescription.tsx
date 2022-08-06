@@ -11,16 +11,16 @@ const ProductDescription = ({ data }: any) => {
         <p className="w-50 mt-4">{data.descricao}</p>
         <h6 className="text-black-50">Color</h6>
         <div className="d-flex gap-2">
-          {data.cores.map((item: any) => (
-            <div>
+          {data.cores.map((item: any, index: number) => (
+            <div key={index}>
               <RoundedButton isProduct mapdata={item} />
             </div>
           ))}
         </div>
         <h6 className="text-black-50 mt-3">Size</h6>
         <div className="d-flex gap-2">
-          {data.tamanhos.map((item: any) => (
-            <Size mapdata={item} />
+          {data.tamanhos.map((item: any, index: number) => (
+            <Size key={index} mapdata={item} />
           ))}
         </div>
       </div>

@@ -3,7 +3,6 @@ import { useCounterContext } from "../../services/context";
 
 const ProductMain = () => {
   const { data }: any = useCounterContext();
-  console.log(data.product);
   return (
     <main className="py-5 h-100">
       <section className="container h-100">
@@ -11,8 +10,8 @@ const ProductMain = () => {
           <div className="">
             <div className="container ">
               <div className="row row-cols-2  h-vh-100">
-                {data.product.fotos.map((item: any) => (
-                  <Photos mapdata={item} />
+                {data.product.fotos.map((item: any ,index:Number) => (
+                  <Photos key={index} mapdata={item} />
                 ))}
               </div>
             </div>
