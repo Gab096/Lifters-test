@@ -1,8 +1,8 @@
 import { Card } from "../";
-import { useAuth } from "../../services/auth";
+import { useCounterContext } from "../../services/context";
 
 const Products = () => {
-  const { data }: any = useAuth();
+  const { data }: any = useCounterContext();
   return (
     <div>
       <div className="row mt-5 justify-content-end">

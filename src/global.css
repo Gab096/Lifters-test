@@ -86,3 +86,9 @@
 .bg-preto:hover{
   background: #000;
 }
+#search {
+  width: 200px !important;
+}
+.h-vh-100{
+  height: 95vh !important;
+}

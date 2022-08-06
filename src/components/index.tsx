@@ -13,3 +13,4 @@ export { default as Checkbox } from "./atomic/Checkbox";
 export { default as Card } from "./atomic/Card";
 export { default as RoundedButton } from "./atomic/RoundedButton";
 export { default as Logo } from "./atomic/Logo";
+export { default as Size } from "./atomic/Size";

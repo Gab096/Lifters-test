@@ -1,17 +1,20 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../services/auth";
+import { useCounterContext } from "../../services/context";
 
 const Card = ({ mapdata, index }: any) => {
   const navigate = useNavigate();
-  const { data }: any = useAuth();
+  const { data }: any = useCounterContext();
   return (
     <div
       onClick={() => {
         navigate("/product");
-        data.setItem(mapdata);
+        data.setProduct(mapdata);
       }}
     >
-      <div className="card border-0 bg-primary col">
+      <div
+        className="card border-0 datepicker  bg-primary col"
+        style={{ cursor: "pointer" }}
+      >
         {mapdata.fotos.map((item: any, index: number) => {
           if (item.capa) {
             return (

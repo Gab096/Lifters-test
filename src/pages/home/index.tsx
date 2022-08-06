@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { useAuth } from "../../services/auth";
+import { useCounterContext } from "../../services/context";
 import { Header, Main, Banner } from "../../components";
 
 const Home = () => {
-  const { data }: any = useAuth();
- 
+  const { data }: any = useCounterContext();
 
   return (
     <div className="bg-primary Container min-vh-100">

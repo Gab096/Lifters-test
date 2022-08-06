@@ -1,7 +1,7 @@
-import { useAuth } from "../../services/auth";
+import { useCounterContext } from "../../services/context";
 
 const Checkbox = ({ mapdata }: any) => {
-  const { data }: any = useAuth();
+  const { data }: any = useCounterContext();
   return (
     <div className="mt-2 form-check">
       <input

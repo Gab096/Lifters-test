@@ -8,14 +8,14 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [products, setProducts] = useState<any>([]);
+  const [product, setProduct] = useState({});
   const [isChecked, setIsChecked] = useState("");
   const [isColor, setIsColor] = useState("");
-  const [item, setItem] = useState({});
-  const [filterProductColor, setFilterProductColor] = useState([]);
 
   console.log(isColor);
+  let filtered = products;
 
-  const filteredProducts = products.filter((item: any) => {
+  filtered = products.filter((item: any) => {
     return item.categoria.includes(isChecked);
   });
 
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       });
     });
 
-    setFilterProductColor(newArray);
+    setProducts(newArray);
   }, [isColor]);
   const requestApi = () => {
     return api
@@ -48,18 +48,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   const data = {
-    products: filteredProducts,
+    products: filtered,
+    product: product,
+    setProduct: setProduct,
     setIsChecked: setIsChecked,
     setIsColor: setIsColor,
-    setItem: setItem,
-    item: item,
   };
 
   return (
-    <AuthContext.Provider value={{ data, requestApi }}>
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ data }}>{children}</AuthContext.Provider>
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export const useCounterContext = () => useContext(AuthContext);
