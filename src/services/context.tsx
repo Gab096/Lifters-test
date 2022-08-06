@@ -12,7 +12,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isChecked, setIsChecked] = useState("");
   const [isColor, setIsColor] = useState("");
 
-  console.log(isColor);
   let filtered = products;
 
   filtered = products.filter((item: any) => {
