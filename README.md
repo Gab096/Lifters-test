@@ -24,4 +24,4 @@
 - yarn
 <p>Execute a aplicação:</p>
 - yarn vite
-<p>pronto, agora so acessar o localhost :(http://localhost:5173/)</p> 
+<p>pronto, agora so acessar o localhost :</p> [(http://localhost:5173/)](http://localhost:5173/) 
